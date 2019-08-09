@@ -25,6 +25,9 @@
 
 #question {
 	font-family: 'Conv_bebas-neue-bold';
+    margin: 5% 0px 2%;
+    font-size: 80px;
+
 }
 .overTitle {
 	opacity: 0;
@@ -48,10 +51,18 @@
     z-index: 2000;
     border: none;
     border-radius: 20px;
-    width: 300px;
-    padding: 8px 10px;
+    width: 315px;
+    padding: 14px 10px;
     outline: none;
     font-family: 'Conv_bebas-neue-bold';
+    font-size: 22px;
+    background-image: url("../images/paper.jpg");
+}
+
+.wrapper {
+	max-width: 1200px;
+	width: 95%;
+	margin: 0 auto;
 }
 
 .qunatity {
@@ -75,12 +86,11 @@
     align-items: center;
     justify-content: center;
     flex-flow: column;
-    
     height: 100vh;
-    
-    background: linear-gradient(to right, rgba(36,31,31,1) 0%, rgba(36,31,31,1) 32%, rgba(74,71,70,1) 100%);
     color: #fff;
     text-align: center;
+    background-image: linear-gradient(to right bottom, rgba(87, 61, 38, 0.7), rgba(87, 61, 38, 0.7)), url(../images/fedka.jpg);
+    background-position: left;
 }
 
 .vignette{
