@@ -13,7 +13,8 @@ var quest = [
 
 "რომელ წელს დაიბადა თეოდორ დოსტოევსკი?",
 "რა ერქვა მის პირველ შვილს?",
-"როდის გარდაიცვალა"
+"გარდაცვალების წელი",
+"პირველი ცოლი"
 
 ]
 
@@ -21,11 +22,12 @@ var Answers = [
 
 	"1821",
 	"ალიოშა",
-	"1881"
+	"1881",
+	'ანა'
 ]
 
 
-sum.innerHTML = quest.length
+sum.innerHTML = 35
 now.innerHTML = 1;
 
 
@@ -45,9 +47,13 @@ var nowIndex = 1;
 
 next.addEventListener("click",function(){
 
-	console.log(Answers[index])
-	console.log(input.value)
-	if (input.value == Answers[index]) {
+
+	if (nowIndex == Answers.length) {
+		console.log("you win")
+	}
+	var str = input.value.replace(/\s/g, '')
+
+	if (str == Answers[index]) {
 
 			nowIndex++;
 			now.innerHTML = nowIndex;
@@ -55,14 +61,58 @@ next.addEventListener("click",function(){
 			input.value = ''
 			index++;
 			question.innerHTML = quest[index];
+			input.classList.remove('error')
 		
 	}else {
+		if (input.value.length > 0) {
 
+		input.classList.add('error');
+		input.classList.add('shake');
+
+		setTimeout(function(){
+		input.classList.remove('shake');
+
+		},700)
+		}
+		if (input.value.length == 0) {
+		input.classList.add('shake');
+					setTimeout(function(){
+		input.classList.remove('shake');
+
+		},700)	
+		}
 	}
+})
+
+input.addEventListener("keyup",function(){
+
+	 
+	if (this.value.length ==0) {
+		
+			input.classList.remove('error');
+	}
+
 })
 
 
 
+window.addEventListener("keyup",function(event){
 
+	if (event.which == 13) {
+
+		next.click()
+	}
+
+})
+
+var audio = new Audio("music/Moonlight.mp3");
+audio.play()
+
+audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+$(".test").geokbd()
 
 

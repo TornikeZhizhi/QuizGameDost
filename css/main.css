@@ -25,8 +25,10 @@
 
 #question {
 	font-family: 'Conv_bebas-neue-bold';
-    margin: 5% 0px 2%;
-    font-size: 80px;
+    margin: 5% auto 2%;
+    font-size:65px;
+    max-width: 1000px;
+    width: 95%;
 
 }
 .overTitle {
@@ -64,6 +66,36 @@
 	width: 95%;
 	margin: 0 auto;
 }
+.tab_wrapper {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#input.error {
+  color: red;
+}
+
+#input.shake {
+  animation: shake .5s linear alternate;
+}
+
+@keyframes shake {
+  0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+  10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+  30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+  40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+  50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+  70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+  80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+  90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+  100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
 
 .qunatity {
 	color: #fff;
@@ -74,6 +106,16 @@
 
 }
 
+#next {
+  cursor: pointer;
+  margin-top: 20px;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+
+}
 
 #next span{
 	font-family: 'Conv_bebas-neue-bold';
